@@ -1128,3 +1128,14 @@
 233	3956	1617231188	esp-idf/esp32/ld/esp32.project.ld	e6857a33fb2c8f16
 3956	4885	1617231189	Button_Counter_Franzininho_WiFi.elf	383f0c1cdedc3da1
 4885	5266	1617231190	.bin_timestamp	ad3d5c5c72499e1f
+21	48	1617228809	bootloader-prefix/src/bootloader-stamp/bootloader-build	2763aefed46528ee
+21	48	1617228809	bootloader/bootloader.elf	2763aefed46528ee
+21	48	1617228809	bootloader/bootloader.bin	2763aefed46528ee
+21	48	1617228809	bootloader/bootloader.map	2763aefed46528ee
+22	92	1617233076	esp-idf/app_update/CMakeFiles/__idf_app_update.dir/esp_app_desc.c.obj	6de6c4125b659fff
+92	113	1617233076	esp-idf/app_update/libapp_update.a	482ff87275b06f57
+114	210	1617233076	esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj	b9d3f348962d8889
+210	230	1617233076	esp-idf/main/libmain.a	5ee86f558ad96b9a
+230	2583	1617233079	esp-idf/esp32/ld/esp32.project.ld	e6857a33fb2c8f16
+2583	3217	1617233079	Button_Counter_Franzininho_WiFi.elf	383f0c1cdedc3da1
+3217	3429	1617233079	.bin_timestamp	ad3d5c5c72499e1f

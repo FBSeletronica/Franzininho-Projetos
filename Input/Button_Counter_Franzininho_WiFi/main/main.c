@@ -2,10 +2,10 @@
 Autor : Halysson Junior
 Data 31/03/21
 
-*//* Exemplo de Input
-    Nesse exemplo ao pressionar  botão táctil o LED_ONBOARD é acionado e mostra no terminal. Na montagem do circuito foi utilizado um resistor de 
-   pullup externo. 
-    Caso o usário deseje acionar os resistores de pullup(I) ou pulldown(II) internos, só descomentar o que deseja utilizar.
+ Exemplo de Input
+    Nesse exemplo ao pressionar irá iniciar uma contagem indefinida e será mostrado
+    os valores de contagem no terminal. Foi adotado a topologia utilizando resistor de pullup 
+    interno da placa Franzininho Wi-Fi
  */
 
 
@@ -17,19 +17,13 @@ Data 31/03/21
 #include "driver/gpio.h"
 #include "sdkconfig.h"
 #include "esp_log.h"
-/* Definições de Pinos*/
+
+/* Definições do Pino*/
 
 #define BTN 15 
-#define LED_ONBOARD 2 
-#define HIGH 1
-#define LOW 0
+
 
 void app_main(void){  // Main
-
-
- /* OUTPUT*/
- gpio_pad_select_gpio(LED_ONBOARD);  
- gpio_set_direction(LED_ONBOARD,GPIO_MODE_OUTPUT);
 
 /* INPUT*/
  gpio_pad_select_gpio(BTN);  
@@ -39,29 +33,31 @@ void app_main(void){  // Main
   gpio_pullup_en(BTN);
   gpio_pulldown_dis(BTN); 
 
+ /* Mensagem de inicialização*/
  ESP_LOGI("[INFO]", "INICIANDO CONTADOR FRANZININHO");
 
 
- /* Habilita pulldown
- gpio_pulldown_en(BTN);
- gpio_pullup_dis(BTN);
- */
+ /* Habilita pulldown*/
+ //gpio_pulldown_en(BTN);
+ //gpio_pullup_dis(BTN);
+ 
 
 
       
-unsigned int counter = 0;
-bool last_state_btn = 0;
+unsigned int counter = 0; // Variavel para receber o incremento após ser pressionar o botão
+bool last_state_btn = 0; // Variável para auxiliar do botão
+    
     while (1) { // Loop
      
-  
       bool state_btn = gpio_get_level(BTN); // Leitura do botão
       
-      if(!state_btn && !last_state_btn) {last_state_btn = 1;}
+      if(!state_btn && !last_state_btn) {last_state_btn = 1;} // Se botão pressionado seta variável last_state_btn
       
-      else if(state_btn && last_state_btn) {
+      else if(state_btn && last_state_btn) { /* Botão pressionado e last_state_btn em 1, realiza a contagem
+                                             e mostra no terminal o valor da contagem*/
         counter ++;
-         ESP_LOGI("Contador ", " %d", counter);// Mostra informação no monitor "LED LIGADO"
-        last_state_btn = 0;
+         ESP_LOGI("Contador ", " %d", counter);
+        last_state_btn = 0; // Reseta a variável
       }
       vTaskDelay(1); // Delay 1 ms
     
