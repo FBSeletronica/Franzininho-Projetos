@@ -13,7 +13,7 @@ Após o projeto configurado e realizado a build, garanta que realizou a seleçã
 
 
 Algumas placas de desenvolvimento usam um LED endereçavel internamente na placa. Abaixo estão as placas de desenvolvimento que possuem:
-| Board                | LED type             | Pin                  |
+| Placa                | Tipo de LED          | Pino                 |
 | -------------------- | -------------------- | -------------------- |
 | ESP32-WROOM- DevKit-1| Não Endereçado       | GPIO2                |
 | Franzininho WiFi     | Endereçado           | GPIO18               |
