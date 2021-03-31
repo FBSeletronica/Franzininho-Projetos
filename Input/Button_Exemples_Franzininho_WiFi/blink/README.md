@@ -1,63 +1,42 @@
-# Blink Example
+#  Examplo Input 
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+Acionamento do LED on board por meio de um botão tátcil na configuração pullup (acionamento LOW - 0). Neste projeto utilizou-se um resistor externo de 10k ohm, contudo o usuário pode substituir a topologia do circuito sugerido e utilizar os resistores internos pullup ou pulldown e consequentimento haverá mudanças na lógica de acionamento do LED on board.
 
-This example demonstrates how to blink a LED using GPIO or RMT for the addressable LED, i.e. [WS2812](http://www.world-semi.com/Certifications/WS2812B.html).
+## Como usar o exemplo
 
-See the RMT examples in the [RMT Peripheral](../../peripherals/rmt) for more information about how to use it.
+Após o projeto configurado e realizado a build, garanta que realizou a seleção do chip correto usando : `idf.py set-target <chip_name>`
 
-## How to Use Example
-
-Before project configuration and build, be sure to set the correct chip target using `idf.py set-target <chip_name>`.
-
-### Hardware Required
+### Hardware Necessários
 
 * A development board with ESP32/ESP32-S2/ESP32-C3 SoC (e.g., ESP32-DevKitC, ESP-WROVER-KIT, etc.)
-* A USB cable for Power supply and programming
+* Um cabo USB para alimentação e programação
 
-Some development boards use an addressable LED instead of a regular one. These development boards include:
 
+Algumas placas de desenvolvimento usam um LED endereçavel internamente na placa. Abaixo estão as placas de desenvolvimento que possuem:
 | Board                | LED type             | Pin                  |
 | -------------------- | -------------------- | -------------------- |
-| ESP32-C3-DevKitC-1   | Addressable          | GPIO8                |
-| ESP32-C3-DevKitM-1   | Addressable          | GPIO8                |
-| ESP32-S2-DevKitM-1   | Addressable          | GPIO18               |
-| ESP32-S2-Saola-1     | Addressable          | GPIO18               |
+| ESP32-WROOM- DevKit-1| Não Endereçado       | GPIO2                |
+| Franzininho WiFi     | Endereçado           | GPIO18               |
+| ESP32-C3-DevKitC-1   | Endereçado           | GPIO8                |
+| ESP32-C3-DevKitM-1   | Endereçado           | GPIO8                |
+| ESP32-S2-DevKitM-1   | Endereçado           | GPIO18               |
+| ESP32-S2-Saola-1     | Endereçado           | GPIO18               |
 
-See [Development Boards](https://www.espressif.com/en/products/devkits) for more information about it.
+Veja em [Development Boards](https://www.espressif.com/en/products/devkits) para mais informações.
 
-### Configure the Project
+### Configuração do Projeto
 
-Open the project configuration menu (`idf.py menuconfig`). 
-
-In the `Example Configuration` menu:
-
-* Select the LED type in the `Blink LED type` option.
-    * * Use `GPIO` for regular LED blink.
-    * * Use `RMT` for addressable LED blink.
-    * * * Use `RMT Channel` to select the RMT peripheral channel.
-* Set the GPIO number used for the signal in the `Blink GPIO number` option.
-* Set the blinking period in the `Blink period in ms` option.
+Baixe o exemplo na sua máquina e abra o arquivo no Visual Studio Code. É necessário
+que o usuário tenha instalado a extensão da ESPRESSIF, caso não acesse esse link : https://www.youtube.com/watch?v=rxMg_zxO0q0 .
+Abra o no menu de configuração do projeto (`idf.py menuconfig`).
 
 
-### Build and Flash
+### Build e Flash
+Após configurado do seu projeto, selecione a porta de comunicação por meio do comando : `idf.py -p PORT flash monitor` 
+para realizar a build, flash (gravar) e abrir o monitor serial do projeto.
 
-Run `idf.py -p PORT flash monitor` to build, flash and monitor the project.
 
-(To exit the serial monitor, type ``Ctrl-]``.)
+## Problemas
 
-See the [Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/index.html) for full steps to configure and use ESP-IDF to build projects.
-
-## Example Output
-
-As you run the example, you will see the LED blinking, according to the previously defined period. For the addressable LED, you can also change the LED color by setting the `pStrip_a->set_pixel(pStrip_a, 0, 16, 16, 16);` (LED Strip, Pixel Number, Red, Green, Blue) with values from 0 to 255 in the `blink.c` file.
-
-Note: The color order could be different according to the LED model.
-
-The pixel number indicates the pixel position in the LED strip. For a single LED, use 0.
-
-## Troubleshooting
-
-* If the LED isn't blinking, check the GPIO or the LED type selection in the `Example Configuration` menu.
-
-For any technical queries, please open an [issue] (https://github.com/espressif/esp-idf/issues) on GitHub. We will get back to you soon.
+* Primeramente volte a sessão "Configuração do Projeto"
+* Segundamente verifique as GPIO do seu projeto e a topologia do circuito realizar no exemplo.
