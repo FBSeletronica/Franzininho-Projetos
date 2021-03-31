@@ -8,7 +8,7 @@ Após o projeto configurado e realizado a build, garanta que realizou a seleçã
 
 ### Hardware Necessários
 
-* A development board with ESP32/ESP32-S2/ESP32-C3 SoC (e.g., ESP32-DevKitC, ESP-WROVER-KIT, etc.)
+* Uma placa de desenvolvimento ESP32/ESP32-S2/ESP32-C3 SoC (por exemplo, Franzininho WiFi, ESP32-DevKitC, ESP-WROVER-KIT, etc.)
 * Um cabo USB para alimentação e programação
 
 
