@@ -1,6 +1,6 @@
 # Franzininho-Projetos
 
-## Seja Bem- Vindo
+## Seja Bem-Vindo
 Nesse repositório apresento exemplos de projetos para o iniciante dar seu primeiros passos com a placa Franzininho WiFi. Sinta-se a vontade em contribuir e dar seu feedback, estamos em desenvolvimento e toda ajuda é necessária ;)
 
 ## Exemplos Básicos 
