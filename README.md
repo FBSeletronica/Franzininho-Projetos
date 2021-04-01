@@ -14,7 +14,7 @@ Nesse repositório apresento exemplos de projetos para o iniciante dar seu prime
 
 * Nota: Os exemplos listados utlizando o editor de texto Visual Code Studio (VS Code) junto a extensão da Espressif para interagir com a IDF
 
-## Referencia 
+## Referência 
 - Sobre o projeto Franzininho : https://franzininho.com.br/ 
 - Extensão IDF : https://www.youtube.com/watch?v=rxMg_zxO0q0&t=1s
 - Documentação API : https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/index.html
