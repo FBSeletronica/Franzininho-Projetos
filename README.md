@@ -9,7 +9,7 @@
 5. SPI (Falta implementar)
 6. Bluetooth Low Energy ((Falta implementar))
 
-* Nota: Os exemplos listados utlizando o editor de texto Visual Code Studio (VS Code) utilizando a extensão da Espressif para interagir com a IDF
+* Nota: Os exemplos listados utlizando o editor de texto Visual Code Studio (VS Code) junto a extensão da Espressif para interagir com a IDF
 
 ## Referencia 
 - Extensão IDF : https://www.youtube.com/watch?v=rxMg_zxO0q0&t=1s
